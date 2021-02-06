@@ -5,12 +5,6 @@ import ArticleList from '../components/ArticleList'
 export default function Home({articles}) { 
   return (
     <div>
-      <Head>
-        <title>NextJS Practice Homepage</title>
-        <meta name="keywords" content="web development, programming"/>
-        <link rel="icon" href="/favicon.ico" />
-      </Head> 
-
       <ArticleList articles={articles}/>
     </div>
   )
