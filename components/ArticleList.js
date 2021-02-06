@@ -5,7 +5,7 @@ import ArticleItem from '../components/ArticleItem'
     return (
         <div className={articlesListStyles.grid}>
             {articles.map(article => (
-                <ArticleItem article={article}/>
+                <ArticleItem article={article} key={article.id}/>
             ))}
         </div>
     )
