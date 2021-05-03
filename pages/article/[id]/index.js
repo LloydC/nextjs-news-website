@@ -1,5 +1,5 @@
 import Meta from '../../../components/Meta'
-import server from '../../../config'
+//import server from '../../../config'
 import Link from 'next/link'
 
 const article = ({article}) => {
@@ -15,7 +15,7 @@ const article = ({article}) => {
 }
 
 export async function getStaticProps(context) {
-    const res = await fetch(`${server}/api/articles/${context.params.id}`)
+    const res = await fetch(`/api/articles/${context.params.id}`)
     const article = await res.json()
   
     if (!article) {
@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
   }
 
 export const getStaticPaths = async () => {
-    const res = await fetch(`${server}/api/articles`)
+    const res = await fetch(`/api/articles`)
     const articles = await res.json()
     
     const ids = articles.map(article => article.id)
